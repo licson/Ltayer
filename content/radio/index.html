@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="../../css/jquery-ui-1.10.3.custom.min.css" />
+		<style>
+			html, body {
+				width: 100%;
+				height: 100%;
+				background: transparent;
+			}
+			
+			body {
+				margin: 0;
+				padding: 0;
+				outline: none;
+				font-family: Arial, sans-serif;
+			}
+			
+			.container {
+				width: 70%;
+				height: 70%;
+				margin: auto;
+				padding: 1em 1.5em;
+			}
+		</style>
+		<script src="../../js/jquery-1.9.1.js"></script>
+		<script src="../../js/jquery-ui-1.10.3.custom.min.js"></script>
+		<script src="../../js/jquery.ui.touch.min.js"></script>
+		<script>
+			$(function(){
+				var audio = new Audio(), start = function(url){
+					$('#playing h1').text('開始播放……');
+					$('#playing').fadeIn(500);
+					$('.container:not(#playing)').fadeOut(500);
+					
+					audio.src = url;
+					audio.load();
+					audio.play();
+					$(audio).animate({volume: 1},1000);
+				}, stop = function(){
+					$('.container:not(#playing)').fadeIn(500);
+					$('#playing').fadeOut(500);
+					
+					$(audio).animate({volume: 0},1000,function(){
+						audio.pause();
+					});
+				};
+				
+				$(audio).on('canplay playing',function(){
+					$('#playing h1').text('播放中……');
+				});
+				
+				$(audio).on('error',function(){
+					$('#playing h1').text('發生錯誤，重新連接……');
+					this.load();
+					this.play();
+				});
+				
+				$('.btn').button();
+				$('button:not([data-url]):not(#stop)').click(function(e){
+					e.preventDefault();
+					var url = $('#loc').val();
+					if(url){
+						start(url+';');
+					}
+					else {
+						$('<div title="錯誤">URL格式不正確</div>').appendTo('body').dialog({modal: true});
+					}
+				});
+				
+				$('button[data-url]').click(function(e){
+					e.preventDefault();
+					start($(this).attr('data-url')+';');
+				});
+				
+				$('#stop').click(function(e){
+					e.preventDefault();
+					stop();
+				});
+			});
+		</script>
+	</head>
+	
+	<body>
+		<div class="container">
+			<h1>網路電台</h1>
+			<form class="input">
+				<label>請輸入網路電台位置:</label>
+				<input type="url" id="loc" />
+				<button class="btn">播放</button>
+				<p>或是選擇以下的電台：</p>
+				<!-- Radio channels -->
+				<button class="btn" data-url="http://stream-76.shoutcast.com/piano_skyfm_mp3_96kbps/">Solo Piano - SKY.FM</button>
+				<button class="btn" data-url="http://stream-170.shoutcast.com/smoothjazz_skyfm_mp3_96kbps/">Absolutely Smooth Jazz - SKY.FM</button>
+				<button class="btn" data-url="http://193.34.51.109/">#MUSIK.METAL</button>
+				<button class="btn" data-url="http://193.34.51.48/">#MUSIK.MAIN</button>
+				<button class="btn" data-url="http://108.61.73.119:8018/">181.FM - Highway 181 (Classic Country)</button>
+				<button class="btn" data-url="http://91.121.71.210:8000/">CINEMIX</button>
+			</form>
+		</div>
+		<div class="container" id="playing" style="display: none;">
+			<h1>開始播放……</h1>
+			<button class="btn" id="stop">停止</button>
+		</div>
+	</body>
+</html>

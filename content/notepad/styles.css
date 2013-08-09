@@ -1,0 +1,110 @@
+body {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	
+	font-family: Arial, sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.wrapper {
+	width: 80%;
+	margin: 1em auto;
+}
+
+ul.notes {
+	padding: 0;
+	margin: 0 auto;
+	list-style: none;
+	list-style-type: none;
+}
+
+ul.notes li {
+	float: left;
+	width: 42%;
+	min-height: 3em;
+	padding: 1em;
+	margin: 0.5em 0.3em;
+	background-color: #fff; 
+	background-image: -webkit-linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px), -webkit-linear-gradient(#eee .1em, transparent .1em);
+	background-image: -moz-linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px), -moz-linear-gradient(#eee .1em, transparent .1em);
+	background-image: -o-linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px), -o-linear-gradient(#eee .1em, transparent .1em);
+	background-image: -ms-linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px), -ms-linear-gradient(#eee .1em, transparent .1em);
+	background-image: linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px), linear-gradient(#eee .1em, transparent .1em);
+
+	background-size: 100% 1.5em;
+	border-radius: 5px;
+	box-shadow: 2px 2px 5px #aaa;
+}
+
+@media all and (max-width: 650px) {
+	ul.notes li {
+		width: 100%;
+	}
+}
+
+p {
+	margin: 0;
+	line-height: 2.2em;
+	font-size: 1.2em;
+}
+
+pre {
+	background-color: #fff; 
+	background-image: -webkit-linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px), -webkit-linear-gradient(#eee .1em, transparent .1em);
+	background-image: -moz-linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px), -moz-linear-gradient(#eee .1em, transparent .1em);
+	background-image: -o-linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px), -o-linear-gradient(#eee .1em, transparent .1em);
+	background-image: -ms-linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px), -ms-linear-gradient(#eee .1em, transparent .1em);
+	background-image: linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px), linear-gradient(#eee .1em, transparent .1em);
+	background-size: 100% 1.5em;
+	font-size: 1.2em;
+	line-height: 1.5em;
+    padding-left: 85px !important;
+    border: none !important;
+	word-wrap: break-word;
+	font-family: Arial, sans-serif;
+}
+
+.nav {
+	border-bottom: 1px solid #ccc;
+	padding: 1em;
+}
+
+.nav a {
+	display: inline-block;
+	margin-right: 1.5em;
+}
+.nav-noline {
+    border: none;
+}
+.edit-form {
+    width: 80%;
+    margin: 1em auto;
+}
+
+.edit-form label {
+    display: block;
+    margin: 0.5em;
+}
+
+.edit-form textarea, .edit-form input {
+    width: 100%;
+    height: auto;
+    resize: none;
+}
+
+.edit-form button[type=submit] {
+    display: block;
+    background: #ededed;
+    border-radius: 5px;
+    padding: 0.75em 0.3em;
+    border: #ccc 1px solid;
+}

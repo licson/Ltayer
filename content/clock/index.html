@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+    <head>
+        <script>
+        window.requestAnimFrame = function(){
+            return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(a){
+                window.setTimeout(a,1E3/60);
+            };
+        }();
+        
+        var canvas,ctx,hue=0,sat=50,dir=!0;
+        
+        function ready(){
+            canvas = document.getElementById("canvas");
+            ctx = canvas.getContext("2d");
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            draw();
+        }
+        
+        function draw(){
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            var a = [canvas.width/2, canvas.height/2],
+                b = new Date,
+                b = [b.getFullYear(),"-",b.getMonth()+1,"-",b.getDate()," ",b.getHours(),":",b.getMinutes(),":",b.getSeconds(),".",b.getMilliseconds()].join(""),
+                e = ctx.measureText(b),
+                f = ctx.createRadialGradient(a[0],a[1],canvas.width/8,a[0],a[1],canvas.width);
+                !0 == dir ? (hue++, sat++, 360 == hue && (dir = !1),100 < sat && (sat = 100)):!1 == dir && (hue--, sat--, 0 == hue && (dir = !0), 0 > sat && (sat = 0));
+            var j="hsl("+hue+","+sat+"%,50%)";
+            f.addColorStop(0,"#fff");
+            f.addColorStop(0.8,j);
+            ctx.fillStyle = f;
+            ctx.fillRect(0,0,canvas.width,canvas.height);
+            ctx.beginPath();
+            ctx.fillStyle = "rgba(0,100,0,0.378)";
+            ctx.strokeStyle = "rgba(0,51,0,0.378)";
+            ctx.shadowBlur = 50;
+            ctx.shadowColor = "rgba(32,32,32,0.45)";
+            ctx.lineWidth = 5;
+            ctx.rect(a[0] - e.width / 2 - 5, a[1] - canvas.height / 10 - 7, e.width + 10, canvas.height / 10 + 17);
+            ctx.fill();
+            ctx.stroke();
+            ctx.font = canvas.height / 10 + "pt Arial";
+            ctx.textAlign = "center";
+            ctx.fillStyle = f;
+            ctx.fillText(b,a[0],a[1]);
+            requestAnimFrame(draw);
+        };
+        window.addEventListener("load",ready,!1);
+        window.addEventListener("resize",function(){
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight
+        },!1);
+        </script>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+    </body>
+</html>
