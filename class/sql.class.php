@@ -1,40 +1,20 @@
 <?php
-/*
- *  Copyright (C) 2012
- *     Ed Rackham (http://github.com/a1phanumeric/PHP-MySQL-Class)
- *
- *  This program is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
 
-// MySQL Class v0.8
 class MySQL {
-	
-	// Base variables
-	var $lastError;					// Holds the last error
-	var $lastQuery;					// Holds the last query
-	var $result;						// Holds the MySQL query result
-	var $records;						// Holds the total number of records returned
-	var $affected;					// Holds the total number of records affected
-	var $rawResults;				// Holds raw 'arrayed' results
-	var $arrayedResult;			// Holds an array of the result
+	var $lastError;
+	var $lastQuery;
+	var $result;
+	var $records;
+	var $affected;
+	var $rawResults;
+	var $arrayedResult;
 	
 	var $hostname;	// MySQL Hostname
 	var $username;	// MySQL Username
 	var $password;	// MySQL Password
 	var $database;	// MySQL Database
 	
-	var $databaseLink;		// Database Connection Link
+	var $databaseLink;
 	
 
 
@@ -42,7 +22,7 @@ class MySQL {
 	 * Class Constructor *
 	 * *******************/
 	
-	function MySQL($database, $username, $password, $hostname='localhost'){
+	function __construct($database, $username, $password, $hostname='localhost'){
 		$this->database = $database;
 		$this->username = $username;
 		$this->password = $password;
