@@ -100,7 +100,7 @@ CREATE TABLE IF NOT EXISTS `setting` (
 
 INSERT INTO `setting` (`name`, `value`) VALUES
 ('system_name', 'LA Webtop '),
-('bg', 'http://licson.tk/backgrounds/1.jpg');
+('bg', 'img/bg.png');
 
 -- --------------------------------------------------------
 
