@@ -6,6 +6,7 @@ include('function.php');
 $username = $_POST['username'];
 $password = $_POST['password'];
 $res = login($username, $password);
+
 switch($res){
 	case 0:	
 		header("Location: login.php?err=0");
@@ -14,7 +15,7 @@ switch($res){
 	case 1:
 		$_SESSION['login'] = true;
 		$_SESSION['login_username'] = $username;
-		if(preg_match("/(Android)|(i(Pod|Phone|Pad))|(Mobile)/i",$_SERVER['HTTP_USER_AGENT'])){
+		if(preg_match("/(Android)|(i(Pod|Phone))|(Mobile)/i",$_SERVER['HTTP_USER_AGENT'])){
 			header("Location: ./mobile/");
 		}
 		else {
@@ -26,10 +27,3 @@ switch($res){
 		header("Location: login.php?err=1");
 	break;
 }
-
-
-?>
-
-
-
-

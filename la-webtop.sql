@@ -51,7 +51,7 @@ INSERT INTO `app` (`id`, `app_key`, `name`, `canvas_url`, `logo`, `perms`, `is_s
 (7, NULL, '時鐘', 'content/clock/index.html', 'img/icons/clock.png', 'PERMISSON_NONE', 0),
 (8, NULL, '養老鼠', 'game/hamster.html', 'img/icons/hamster.png', 'PERMISSON_NONE', 0),
 (9, NULL, '打彈珠', 'game/disc-drop.html', 'img/icons/disc-drop.png', 'PERMISSON_NONE', 0),
-(10, NULL, 'HexGL(3D賽車)', 'http://licson.tk/demos/hexgl/', 'img/icons/hexgl.png', 'PERMISSON_NONE', 0),
+(10, NULL, 'HexGL(3D賽車)', 'http://serve-licson.net23.net/demos/hexgl/', 'img/icons/hexgl.png', 'PERMISSON_NONE', 0),
 (12, NULL, '控制台', 'admin/index.php', 'img/icons/setting.png', 'PERMISSON_CHANGE_SETTINGS', 1),
 (11, NULL, '記事本', 'content/notepad/index.php', 'img/icons/notepad.png', 'PERMISSON_NONE', 0);
 

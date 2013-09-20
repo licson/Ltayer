@@ -1,6 +1,11 @@
 <?php
 require('require.php');
 include('database.php');
+
+if(preg_match("/(Android)|(i(Pod|Phone))|(Mobile)/i",$_SERVER['HTTP_USER_AGENT'])){
+	header("Location: ./mobile/");
+}
+
 function url($path){
 	if(preg_match('/^https?/',$path)){
 		echo $path;
@@ -9,6 +14,7 @@ function url($path){
 		echo $path;
 	}
 }
+
 $res = $db->select("setting",array("name"=>"system_name"));
 $title = $res[0]["value"];
 
@@ -34,14 +40,14 @@ $bg = $res[0]["value"];
 		<script src="js/webos.js"></script>
 	</head>
 	<body>
-		<div id="status-bar" class="ui-widget-header ui-helper-clearfix">
+		<div id="status-bar" class="user-header ui-helper-clearfix">
 			<ul>
 				<li data-role="logo"><span class="ui-icon ui-icon-home"></span></li>
 				<li data-role="title"><?php echo $title; ?></li>
 				<li><a href="logout.php">登出</a></li>
 				<li class="pull-right"><a href="#" id="win_button">視窗</a></li>
 			</ul>
-			<ul id="wins" class="ui-state-default">
+			<ul id="wins">
 				<li class="ignore">沒有視窗！</li>
 			</ul>
 		</div>

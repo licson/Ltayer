@@ -2,8 +2,8 @@ body {
 	margin: 0;
 	padding: 0;
 	outline: none;
-	font-family: 'Source Sans Pro', Arial, sans-serif;
-	background: url(../img/bg.jpg) center top;
+	font-family: Arial, sans-serif;
+	background: url(../img/bg.png) center top;
 	background-size: cover;
 	overflow: hidden;
 }
@@ -36,6 +36,17 @@ a:link, a:visited {
 	float: right !important;
 }
 
+.user-header {
+    color: white;
+    box-shadow: 0 0 50px #D3F8FF;
+    -webkit-box-shadow: 0 0 50px #D3F8FF;
+    -moz-box-shadow: 0 0 50px #D3F8FF;
+}
+
+.user-header a {
+    color: white;
+}
+
 #status-bar {
 	padding: 0.3em 0.7em;
 	-moz-user-select: none;
@@ -57,9 +68,9 @@ a:link, a:visited {
 
 #shortcuts {
 	padding: 0;
-	margin: 0;
-	margin-top: 1.5em;
-	width: 50%;
+	margin: auto;
+	margin-top: 6%;
+	width: 80%;
 	list-style: none;
 	-moz-user-select: none;
 	-webkit-user-select: none;
@@ -72,7 +83,7 @@ a:link, a:visited {
 	width: 6em;
 	height: 5.5em;
 	padding: 0.5em 0.7em;
-	margin: 0.5em 0.7em;
+	margin: 1.5em 1em;
 	border-radius: 5px;
 	text-align: center;
 	font-size: 0.9em;
@@ -108,15 +119,24 @@ a:link, a:visited {
 }
 
 .window .buttons {
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 42%;
 	height: 2.5em;
 	padding: 0 0.7em;
+	background: #fff;
+	color: #000;
+	
+	border-bottom: #eee 1px solid;
+	border-left: #eee 1px solid;
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
 }
 
 .window .buttons p {
 	display: inline;
-	margin: 0;
+	margin-top: 0.6em;
 	text-align: center;
 }
 
@@ -124,44 +144,37 @@ a:link, a:visited {
 	display: inline-block;
 	margin-right: 1em;
 	margin-top: 0.6em;
-	border-radius: 50%;
-}
-
-.min {
-	background: #e5b618;
-}
-
-.close {
-	background: #d40000;
-}
-
-.max {
-	background: #00ff31;
 }
 
 .window iframe {
 	width: 100%;
 	background: url(../img/ajax-loader.gif) no-repeat center center;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
+	border-radius: 5px;
 	border: none;
 	display: block;
 }
 
 #wins {
 	position: absolute;
-	right: 0;
+	right: 5px;
 	top: 0;
-	min-width: 7em;
-	min-height: 2em;
-	border-bottom-left-radius: 5px;
+	border-radius: 5px;
+	background: #fff;
+	max-width: 20%;
+	color: #000;
+	padding: 5px;
+	display: none;
+	border: #eee 1px solid;
 	z-index: 100000;
 }
 
 #wins li {
 	padding: 0.5em;
-	margin: 0;
-	float: none !important;
+	margin: 0.5em 0.7em;
+}
+
+#wins li:hover {
+	border-bottom: #ddd 1px dashed;
 }
 
 #wins li.ignore {
@@ -176,7 +189,7 @@ a:link, a:visited {
 
 @media all and (max-width: 767px){
 	#shortcuts {
-		width: 90%;
+		width: 100%;
 	}
 	
 	.window {
