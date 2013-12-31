@@ -1,26 +1,20 @@
 <?php
 
 class MySQL {
-	var $lastError;
-	var $lastQuery;
-	var $result;
-	var $records;
-	var $affected;
-	var $rawResults;
-	var $arrayedResult;
+	public $lastError;
+	public $lastQuery;
+	public $result;
+	public $records;
+	public $affected;
+	public $rawResults;
+	public $arrayedResult;
 	
-	var $hostname;	// MySQL Hostname
-	var $username;	// MySQL Username
-	var $password;	// MySQL Password
-	var $database;	// MySQL Database
+	public $hostname;	// MySQL Hostname
+	public $username;	// MySQL Username
+	public $password;	// MySQL Password
+	public $database;	// MySQL Database
 	
-	var $databaseLink;
-	
-
-
-	/* *******************
-	 * Class Constructor *
-	 * *******************/
+	public $databaseLink;
 	
 	function __construct($database, $username, $password, $hostname='localhost'){
 		$this->database = $database;
@@ -32,14 +26,9 @@ class MySQL {
 	}
 	
 	
-	
-	/* *******************
-	 * Private Functions *
-	 * *******************/
-	
 	// Connects class to database
 	// $persistant (boolean) - Use persistant connection?
-	private function Connect($persistant = false){
+	private function Connect($persistant = true){
 		if($this->databaseLink){
 			mysql_close($this->databaseLink);
 		}
@@ -88,12 +77,6 @@ class MySQL {
 		return $data;
 	}
 	
-	
-	
-	/* ******************
-	 * Public Functions *
-	 * ******************/
-	
 	// Executes MySQL query
 	function ExecuteSQL($query){
 		$this->lastQuery 	= $query;
@@ -104,7 +87,7 @@ class MySQL {
 			if($this->records > 0){
 				$this->ArrayResults();
 				return $this->arrayedResult;
-			}else{
+			} else {
 				return true;
 			}
 			

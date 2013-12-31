@@ -1,0 +1,42 @@
+	.main-content {
+		overflow: hidden;
+		margin: 1em 5px;
+	}
+	.dir-tree {
+		list-style: none;
+		padding: 1em 0.5em;
+		margin: 0;
+	}
+	.main-tree > ul > li {
+		background: #FFF;
+		border-left: 3px solid #F39C12;
+		margin: 5px 0;
+		box-shadow: 1px 1px 2px #DDD;
+	}
+	.dir-tree li {
+		padding: 0.5em 1em;
+	}
+	
+	.dir-tree li:hover {
+	}
+	
+	.dir-tree ul.dir-tree {
+		padding: 0;
+		margin-left: 0.25em;
+	}
+	
+	.tree-indicator {
+		font-weight: bold;
+	}
+	
+	.dir-tree ul.dir-tree {
+		margin-top: 0.5em;
+		margin-left: 0.5em;
+		padding-left: 0.5em;
+		border-left: 1px #EEE solid;
+		border-bottom: none;
+	}
+	
+	.dir-tree ul.dir-tree li {
+		padding: 0;
+	}

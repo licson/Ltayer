@@ -1,4 +1,12 @@
-LA-WebTop
-=========
+Ltayer
+=================
+Ltayer 是個由 Ltay Team 共同開發的雲端化網路作業系統，最終目標就是把所有在電腦作的事情搬到網路上作，
+即使換到不同電腦，也可以存取一模一樣的資料，讓生活串連在一起。
 
-A Desktop-like environment for use.
+官網：<http://ltayer.ltay.net>
+
+授權
+=================
+MIT License
+
+詳情請查看LICENSE檔案。

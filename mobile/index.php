@@ -1,10 +1,10 @@
 <?php
-require('../require.php');
-include('../database.php');
+require(dirname(__FILE__) . '/../core/require.php');
+include(dirname(__FILE__) . '/../database/database.php');
 
 function url($path){
 	if(preg_match('/^https?/',$path)){
-		echo $path;
+		echo '../app_proxy.php?url=' . urlencode($path) . '&mobile=1';
 	}
 	else {
 		echo '../' . $path;
@@ -16,8 +16,6 @@ $title = $res[0]["value"];
 
 $res = $db->select("setting",array("name"=>"bg"));
 $bg = $res[0]["value"];
-
-$control = $db->select("app",array("is_system_app"=>true,"perms"=>'PERMISSON_CHANGE_SETTINGS'));
 ?>
 <!doctype html>
 <html>
@@ -45,18 +43,24 @@ $control = $db->select("app",array("is_system_app"=>true,"perms"=>'PERMISSON_CHA
 			<div data-role="panel" data-theme="c" id="panel">
 				<ul data-role="listview" data-divider-theme="a">
 					<li data-role="list-divider">基本</li>
-					<li><a href="<?php url($control[0]['canvas_url']); ?>" data-id="<?php echo $control[0]['id']; ?>">設定</a></li>
+					<li><a href="./settings/">行動版設定</a></li>
 					<li><a href="<?php url('logout.php'); ?>" data-ajax="false">登出</a></li>
 				</ul>
 			</div>
-            <div data-role="header" data-theme="b" data-position="fixed">
+            <div data-role="header" data-theme="d" data-position="fixed">
 				<a href="#panel" data-role="button" data-icon="bars" data-iconpos="notext" data-shadow="true"></a>
                 <h1><?php echo $title; ?></h1>
             </div>
     		<div data-role="content" id="pane">
-    			<ul id="shortcuts" data-role="listview" data-theme="c">
+    		    <img src="../img/ltayer.png" alt="<?php echo $title; ?>" style="display: block; margin: 1.5em auto;" />
+    			<ul id="shortcuts" data-role="listview" data-theme="c" data-filter="true" data-filter-placeholder="搜尋應用程式..." data-inset="true">
 					<?php foreach($db->select("app") as $d){ ?>
-					<li><a href="<?php url($d['canvas_url']); ?>" data-id="<?php echo $d['id']; ?>"><img src="<?php url($d['logo']); ?>" /><?php echo $d['name']; ?></a></li>
+					<li>
+				    	<a href="<?php url($d['canvas_url']); ?>" data-id="<?php echo $d['id']; ?>">
+				        	<img src="<?php url($d['logo']); ?>" />
+				        	<p><?php echo $d['name']; ?></p>
+				        </a>
+				    </li>
 					<?php } ?>
     			</ul>
     		</div>

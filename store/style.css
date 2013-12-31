@@ -1,0 +1,80 @@
+body{
+	background-color: #f8f8f8;
+}
+.box{
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border-top: 3px solid #18BC9C;
+	background: #FFF;
+	box-shadow: 1px 1px 3px #DDD;
+	float: left;
+	width: 300px;
+	height: 330px;
+	padding: 1em 1.5em;
+	margin: 10px;
+	position: relative;
+}
+.box.installed {
+	border-top: 3px solid #E74C3C;
+}
+.box.notsuccess {
+	border-top: 3px solid #F39C12;
+}
+.app-logo img {
+	max-width: 300px;
+	max-height: 100px;
+	width: auto;
+	height: auto;
+	margin-bottom: 10px;
+}
+.app-logo {
+	width: 300px;
+	height: 100px;
+	text-align: center;
+	margin-left: -1.5em;
+}
+.app-detail {
+	list-style: none;
+	margin: 1em 0 0;
+	padding: 0;
+}
+.app-detail li {
+	line-height: 1.48;
+	padding: 3px 0;
+	font-size: 15px;
+}
+.app-detail i {
+	width: 18px;
+}
+.app-install {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 300px;
+	border-radius: 0 0 3px 3px; 
+}
+.container{
+	margin-top: 30px;
+}
+.boxw{
+	border-bottom: 2px solid #DDD;
+	padding-bottom: 2px;
+	font-weight: 100;
+}
+.nav{
+	padding-top: 10px;
+}
+.app-status {
+	width: 300px;
+	margin: 2em auto 0 auto;
+}
+.box.center {
+	margin: 0 auto;
+	float: none;
+	text-align: left;
+}
+
+.center {
+	text-align: center;
+}
