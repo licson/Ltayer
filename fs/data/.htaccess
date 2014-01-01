@@ -1,2 +1,3 @@
+deny from all
 php_flag engine off
 Options -Indexes
