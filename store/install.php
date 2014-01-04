@@ -1,6 +1,5 @@
 <?php
-require_once('../core/require.php');
-require_once('../database/database.php');
+require_once('../data/core/initalize.php');
 
 $appid = $_GET['appid'];
 $icon = $_GET['icon'];
@@ -9,6 +8,7 @@ $name = $_GET['name'];
 $cat = $_GET["cat"];
 $nowcat = $_GET["nowcat"];
 $author = $_GET["author"];
+$perm = $_GET["perm"];
 
 function installcheck($appkey, $appname){
     $res = $GLOBALS['db']->select('app', array('app_key' => $appkey));
@@ -23,7 +23,7 @@ if(installcheck($appid,$name)){
 	$statue="installed";
 } else {
     $GLOBALS['db']->delete('app',array('app_key' => $appid));
-	$GLOBALS['db']->insert(array("app_key"=>$appid,"canvas_url"=>$url,"logo"=>$icon,"name"=>$name),"app");
+	$GLOBALS['db']->insert(array("app_key"=>$appid,"canvas_url"=>$url,"logo"=>$icon,"name"=>$name,"perms"=>$perm),"app");
 	$statue = "success";
 }
 ?>
@@ -33,11 +33,11 @@ if(installcheck($appid,$name)){
         <title>安裝 <?php echo $name; ?> - Ltayer Store</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charset="utf-8" />
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/ionicons.css" rel="stylesheet">
+        <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../assets/css/ionicons.css" rel="stylesheet">
         <link href="style.css" rel="stylesheet">
-        <script src="../js/jquery-1.9.1.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
+        <script src="../assets/js/jquery-1.9.1.js"></script>
+        <script src="../assets/js/bootstrap.min.js"></script>
     </head>
     <body>
         <div class="container">
