@@ -1,6 +1,5 @@
 <?php
-require_once('../core/require.php');
-require_once('../database/database.php');
+require_once('../data/core/initalize.php');
 
 $cat = null;
 $au = null;
@@ -25,11 +24,11 @@ function installcheck($appkey, $appname){
         <title>Ltayer Store</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charset="utf-8" />
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/ionicons.css" rel="stylesheet">
+        <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../assets/css/ionicons.css" rel="stylesheet">
         <link href="style.css" rel="stylesheet">
-        <script src="../js/jquery-1.9.1.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
+        <script src="../assets/js/jquery-1.9.1.js"></script>
+        <script src="../assets/js/bootstrap.min.js"></script>
     </head>
 
     <body>
@@ -58,7 +57,7 @@ function installcheck($appkey, $appname){
                 </div>
                 <div class="col-md-10 col-xs-10">
                 <?php if(empty($list)){
-                	echo "無法連線Ltayer Store伺服器";
+                	echo "無法連線至 Ltayer Store";
                 	exit();
                 }
                 if ($list == "true") {
@@ -85,9 +84,9 @@ function installcheck($appkey, $appname){
                             	<li><i class="ion-android-social-user"></i> 作者: <span class="boxw"><a href="?au=<?php echo $c->author; ?>"><?php echo $c->author; ?></span></li>
                             </ul>
                             <?php if(installcheck($c->app_id, $c->name)){ ?>
-                            	<a href="delete.php?appid=<?php echo $c->app_id; ?>&amp;icon=<?php echo $c->icon;?>&amp;url=<?php echo $c->url;?>&amp;name=<?php echo $c->name;?>&amp;author=<?php echo $c->author;?>&amp;cat=<?php echo $c->category;?>&amp;nowcat=<?php echo $cat;?>" class="btn btn-danger app-install">移除</a>
+                            	<a href="delete.php?appid=<?php echo $c->app_id; ?>&amp;icon=<?php echo $c->icon;?>&amp;url=<?php echo $c->url;?>&amp;name=<?php echo $c->name;?>&amp;author=<?php echo $c->author;?>&amp;cat=<?php echo $c->category;?>&amp;perm=<?php echo $c->perm;?>&amp;nowcat=<?php echo $cat;?>" class="btn btn-danger app-install">移除</a>
                             <?php } else { ?>
-                            	<a href="install.php?appid=<?php echo $c->app_id; ?>&amp;icon=<?php echo $c->icon;?>&amp;url=<?php echo $c->url;?>&amp;name=<?php echo $c->name;?>&amp;author=<?php echo $c->author;?>&amp;cat=<?php echo $c->category;?>&amp;nowcat=<?php echo $cat;?>" class="btn btn-success app-install">安裝</a>
+                            	<a href="install.php?appid=<?php echo $c->app_id; ?>&amp;icon=<?php echo $c->icon;?>&amp;url=<?php echo $c->url;?>&amp;name=<?php echo $c->name;?>&amp;author=<?php echo $c->author;?>&amp;cat=<?php echo $c->category;?>&amp;perm=<?php echo $c->perm;?>&amp;nowcat=<?php echo $cat;?>" class="btn btn-success app-install">安裝</a>
                             <?php } ?>
                         </div>
                     </div>
