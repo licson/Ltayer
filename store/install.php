@@ -1,5 +1,6 @@
 <?php
-require_once('../data/core/initalize.php');
+require(dirname(__FILE__) . '/../core/require.php');
+include(dirname(__FILE__) . '/../database/database.php');
 
 $appid = $_GET['appid'];
 $icon = $_GET['icon'];
