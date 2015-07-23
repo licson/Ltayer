@@ -1,5 +1,5 @@
 <?php
-include(dirname(__FILE__) . "/../class/sql.class.php");
+include_once(dirname(__FILE__) . "/../class/sql.class.php");
 //include('config.php');
 
 //Enter sql database name
