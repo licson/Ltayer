@@ -24,6 +24,13 @@ define("PHPSELF", preg_replace("/(.{0,}?\/+)/", "", $phpSelf));
  
 if ($_GET['act'] == "phpinfo")
 {
+	/*新增以下程式碼檢查權限*/
+	require '../core/require.php';
+	include('../database/database.php');
+	
+	$admincheck=$db->select("user", array("username" => $_SESSION['login_username']));
+	
+	if($admincheck[0]["admin"] != "true") die("您沒有權限瀏覽設定頁面");
     phpinfo();
     exit();
 }

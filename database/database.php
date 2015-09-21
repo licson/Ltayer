@@ -1,5 +1,5 @@
 <?php
-include(dirname(__FILE__) . "/../class/sql.class.php");
+include_once(dirname(__FILE__) . "/../class/sql.class.php");/*因notepad需要而改用"include_once" 順便避免多次引用 但在部分測試中有安裝失敗之可能*/
 //include('config.php');
 
 //Enter sql database name
