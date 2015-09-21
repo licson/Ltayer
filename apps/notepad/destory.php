@@ -1,6 +1,7 @@
 <?php
 $id = $_GET['id'];
 
+//新增以下程式碼檢查權限
 require '../../core/require.php';
 include('../../database/database.php');
 

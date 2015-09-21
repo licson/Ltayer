@@ -24,6 +24,7 @@ define("PHPSELF", preg_replace("/(.{0,}?\/+)/", "", $phpSelf));
  
 if ($_GET['act'] == "phpinfo")
 {
+	/*新增以下程式碼檢查權限*/
 	require '../core/require.php';
 	include('../database/database.php');
 	
