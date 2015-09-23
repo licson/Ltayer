@@ -34,11 +34,11 @@ if(installcheck($appid,$name)){
         <title>安裝 <?php echo $name; ?> - Ltayer Store</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charset="utf-8" />
-        <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
-        <link href="../assets/css/ionicons.css" rel="stylesheet">
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/ionicons.css" rel="stylesheet">
         <link href="style.css" rel="stylesheet">
-        <script src="../assets/js/jquery-1.9.1.js"></script>
-        <script src="../assets/js/bootstrap.min.js"></script>
+        <script src="../js/jquery-1.9.1.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
     </head>
     <body>
         <div class="container">
