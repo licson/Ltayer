@@ -49,7 +49,7 @@ $dock = $res[0]["value"];
 			}
 		</style>
 		<script src="js/jquery-1.9.1.js"></script>
-		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 		<script src="js/jquery.ui.touch.min.js"></script>
 		<script src="js/contextmenu.js"></script>
 		<script src="js/ltayer.js"></script>
