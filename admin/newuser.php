@@ -14,7 +14,7 @@ $db->insert(array("username"=>$username,"password"=>md5(sha1($password)),"admin"
 $db->insert(array("name"=>"win_".$username."_pos","value"=>"[]"),"setting");
 @mkdir("../fs/data/".$username, 0777);
 ?>
-<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 <link href="../css/webos.css" type="text/css" rel="stylesheet" />

@@ -10,7 +10,7 @@ if($dockvalue[0]["value"]=="true"){ $dock="checked"; }else{$dock="";}
 <html>
     <head>
         <meta charest="utf-8" />
-        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/webos.css" type="text/css" rel="stylesheet" />
         <style>
         .clear {
